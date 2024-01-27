@@ -8,12 +8,19 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 // import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
   name: "App",
   components: {
     // HelloWorld,
+  },
+  mounted() {
+    this.fetchMovies();
+  },
+  methods: {
+    ...mapActions("movies", ["fetchMovies"]),
   },
 };
 </script>
